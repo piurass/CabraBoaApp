@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CabraBoaApp"
+             x:Class="CabraBoaApp.MainPage">
+
+    <Grid RowSpacing="6" ColumnSpacing="6" BackgroundColor="Green">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        
+        <Label Grid.Row="0" Grid.Column="0" Text="Cabra Boa" FontSize="Large" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="Green" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+        <Label Grid.Row="0" Grid.Column="1" Text="" FontSize="Large" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="Green" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+
+        <Image Grid.Row="1" Grid.Column="0" AutomationId="alertas" Source="alarme.png"  BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnTappedAlertas" NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+
+        <Image Grid.Row="1" Grid.Column="1" AutomationId="configuracoes" Source="configuracoes.png"  BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnTappedConfiguracoes" NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+
+        <Image Grid.Row="2" Grid.Column="0" AutomationId="crescimento" Source="filhote.png" BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnTappedCrescimento" NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+
+        <Image Grid.Row="2" Grid.Column="1" AutomationId="reproducao" Source="reproducao.png" BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnTappedReproducao" NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+
+        <Image Grid.Row="3" Grid.Column="0" AutomationId="cadastro" Source="tarefas.png" BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnTappedCadastro" NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+
+        <Image Grid.Row="3" Grid.Column="1" AutomationId="tarefas" Source="pastor.jpg" BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnTappedTarefas" NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+
+    </Grid>
+
+
+</ContentPage>

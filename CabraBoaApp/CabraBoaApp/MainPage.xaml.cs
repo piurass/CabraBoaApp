@@ -16,32 +16,33 @@ namespace CabraBoaApp
 
         void OnTappedCrescimento(object sender, EventArgs args)
         {
-            Navigation.PushModalAsync(new PageCrescimento());
+            Navigation.PushAsync(new PageCrescimento());
         }
 
         void OnTappedReproducao(object sender, EventArgs args)
         {
-            Navigation.PushModalAsync(new PageReproducao());
+            Navigation.PushAsync(new PageReproducao());
         }
 
         void OnTappedCadastro(object sender, EventArgs args)
         {
-            Navigation.PushModalAsync(new PageCadastro());
+            Navigation.PushAsync(new PageCadastro());
         }
 
         void OnTappedTarefas(object sender, EventArgs args)
         {
-            Navigation.PushModalAsync(new PageTarefas());
+            Navigation.PushAsync(new PageTarefas());
         }
 
         void OnTappedAlertas(object sender, EventArgs args)
         {
-            Navigation.PushModalAsync(new PageAlertas());
+            //Navigation.PushModalAsync(new PageAlertas());
+            Navigation.PushAsync(new PageAlertas());
         }
 
         void OnTappedConfiguracoes(object sender, EventArgs args)
         {
-            Navigation.PushModalAsync(new PageConfiguracoes());
+            Navigation.PushAsync(new PageConfiguracoes());
         }
     }
 }

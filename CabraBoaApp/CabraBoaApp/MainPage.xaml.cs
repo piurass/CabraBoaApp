@@ -14,35 +14,35 @@ namespace CabraBoaApp
             InitializeComponent();
         }
 
-        void OnTappedCrescimento(object sender, EventArgs args)
+        async void OnTappedCrescimento(object sender, EventArgs args)
         {
-            Navigation.PushAsync(new PageCrescimento());
+            await Navigation.PushAsync(new PageCrescimento());
         }
 
-        void OnTappedReproducao(object sender, EventArgs args)
+        async void OnTappedReproducao(object sender, EventArgs args)
         {
-            Navigation.PushAsync(new PageReproducao());
+            await Navigation.PushAsync(new PageReproducao());
         }
 
-        void OnTappedCadastro(object sender, EventArgs args)
+        async void OnTappedCadastro(object sender, EventArgs args)
         {
-            Navigation.PushAsync(new PageCadastro());
+            await Navigation.PushAsync(new PageCadastro());
         }
 
-        void OnTappedTarefas(object sender, EventArgs args)
+        async void OnTappedTarefas(object sender, EventArgs args)
         {
-            Navigation.PushAsync(new PageTarefas());
+            await Navigation.PushAsync(new PageTarefas());
         }
 
-        void OnTappedAlertas(object sender, EventArgs args)
+        async void OnTappedAlertas(object sender, EventArgs args)
         {
             //Navigation.PushModalAsync(new PageAlertas());
-            Navigation.PushAsync(new PageAlertas());
+            await Navigation.PushAsync(new PageAlertas());
         }
 
-        void OnTappedConfiguracoes(object sender, EventArgs args)
+        async void OnTappedConfiguracoes(object sender, EventArgs args)
         {
-            Navigation.PushAsync(new PageConfiguracoes());
+            await Navigation.PushAsync(new PageConfiguracoes());
         }
     }
 }

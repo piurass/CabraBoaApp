@@ -20,7 +20,7 @@
         <Label Grid.Row="0" Grid.Column="0" Text="Cabra Boa" FontSize="Large" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="Green" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
         <Label Grid.Row="0" Grid.Column="1" Text="" FontSize="Large" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="Green" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
 
-        <Image Grid.Row="1" Grid.Column="0" AutomationId="alertas" Source="alarme.png"  BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+        <Image Grid.Row="1" Grid.Column="0" AutomationId="alertas" Source="alerta.png"  BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="OnTappedAlertas" NumberOfTapsRequired="1" />
             </Image.GestureRecognizers>
@@ -32,7 +32,7 @@
             </Image.GestureRecognizers>
         </Image>
 
-        <Image Grid.Row="2" Grid.Column="0" AutomationId="crescimento" Source="filhote.png" BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+        <Image Grid.Row="2" Grid.Column="0" AutomationId="crescimento" Source="crescimento.png" BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="OnTappedCrescimento" NumberOfTapsRequired="1" />
             </Image.GestureRecognizers>
@@ -44,13 +44,13 @@
             </Image.GestureRecognizers>
         </Image>
 
-        <Image Grid.Row="3" Grid.Column="0" AutomationId="cadastro" Source="tarefas.png" BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Image Grid.Row="3" Grid.Column="0" AutomationId="cadastro" Source="cadastro.png" BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="OnTappedCadastro" NumberOfTapsRequired="1" />
             </Image.GestureRecognizers>
         </Image>
 
-        <Image Grid.Row="3" Grid.Column="1" AutomationId="tarefas" Source="pastor.jpg" BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Image Grid.Row="3" Grid.Column="1" AutomationId="tarefas" Source="tarefas.png" BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="OnTappedTarefas" NumberOfTapsRequired="1" />
             </Image.GestureRecognizers>

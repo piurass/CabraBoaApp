@@ -103,17 +103,13 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Assets\alarme.png" />
-    <Content Include="Assets\cabra.png" />
-    <Content Include="Assets\cabrito.png" />
+    <Content Include="Assets\alerta.png" />
     <Content Include="Assets\cadastro.png" />
-    <AndroidResource Include="Assets\configuracoes.png" />
-    <Content Include="Assets\crescimento.jpg" />
-    <Content Include="Assets\filhote.png" />
+    <Content Include="Assets\configuracoes.png" />
+    <Content Include="Assets\crescimento.png" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
     <Content Include="Assets\LargeTile.scale-400.png" />
-    <Content Include="Assets\pastor.jpg" />
     <Content Include="Assets\reproducao.png" />
     <Content Include="Assets\SmallTile.scale-100.png" />
     <Content Include="Assets\SmallTile.scale-200.png" />

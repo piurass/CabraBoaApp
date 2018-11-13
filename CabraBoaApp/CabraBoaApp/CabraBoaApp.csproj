@@ -2,9 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <DebugType>pdbonly</DebugType>
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
@@ -32,5 +38,32 @@
     <EmbeddedResource Update="PageTarefas.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="PageAlertas.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="PageCadastro.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="PageConfiguracoes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="PageCrescimento.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="PageReproducao.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="PageTarefas.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
   </ItemGroup>
 </Project>

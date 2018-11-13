@@ -103,14 +103,14 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\alerta.png" />
-    <Content Include="Assets\cadastro.png" />
-    <Content Include="Assets\configuracoes.png" />
-    <Content Include="Assets\crescimento.png" />
+    <Content Include="alerta.png" />
+    <Content Include="cadastro.png" />
+    <Content Include="configuracoes.png" />
+    <Content Include="crescimento.png" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
     <Content Include="Assets\LargeTile.scale-400.png" />
-    <Content Include="Assets\reproducao.png" />
+    <Content Include="reproducao.png" />
     <Content Include="Assets\SmallTile.scale-100.png" />
     <Content Include="Assets\SmallTile.scale-200.png" />
     <Content Include="Assets\SmallTile.scale-400.png" />
@@ -132,7 +132,7 @@
     <Content Include="Assets\StoreLogo.scale-100.png" />
     <Content Include="Assets\StoreLogo.scale-200.png" />
     <Content Include="Assets\StoreLogo.scale-400.png" />
-    <Content Include="Assets\tarefas.png" />
+    <Content Include="tarefas.png" />
     <Content Include="Assets\Wide310x150Logo.scale-100.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />

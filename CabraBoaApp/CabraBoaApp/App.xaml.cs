@@ -12,7 +12,10 @@ namespace CabraBoaApp
             InitializeComponent();
 
             //MainPage = new MainPage();
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new MainPage())
+            {
+                    BarBackgroundColor = Color.Green
+            } ;
         }
 
         protected override void OnStart()

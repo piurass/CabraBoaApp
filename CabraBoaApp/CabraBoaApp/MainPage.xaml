@@ -2,13 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:CabraBoaApp"
-             x:Class="CabraBoaApp.MainPage"
-             Title="Cabra Boa"
-             BackgroundColor="Green">
-
+             x:Class="CabraBoaApp.MainPage">
+    
+    <NavigationPage.TitleView>
+        <Label Text="Cabra Boa" FontSize="Large" TextColor="White" BackgroundColor="Green" HorizontalTextAlignment="Start" VerticalTextAlignment="End" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+    </NavigationPage.TitleView>
+    
     <Grid RowSpacing="6" ColumnSpacing="6" BackgroundColor="Green">
         <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
+            <!-- <RowDefinition Height="40"/> -->
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -18,46 +20,53 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        
-        <Label Grid.Row="0" Grid.Column="0" Text="Cabra Boa" FontSize="Large" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="Green" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
-        <Label Grid.Row="0" Grid.Column="1" Text="" FontSize="Large" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="Green" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
 
-        <Image Grid.Row="1" Grid.Column="0" AutomationId="alertas" Source="alerta.png"  BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit">
+        <!-- <Label Grid.Row="0" Grid.Column="0" Text="Cabra Boa" FontSize="Large" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="Green" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" /> -->
+        <!-- <Label Grid.Row="0" Grid.Column="1" Text="" FontSize="Large" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="Green" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" /> -->
+
+        <Label Grid.Row="0" Grid.Column="0" Text="Alertas" FontSize="Large" TextColor="Green" BackgroundColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="End"/>
+        <Image Grid.Row="0" Grid.Column="0" AutomationId="alertas" Source="alerta.png" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="OnTappedAlertas" NumberOfTapsRequired="1" />
             </Image.GestureRecognizers>
         </Image>
 
-        <Image Grid.Row="1" Grid.Column="1" AutomationId="configuracoes" Source="configuracoes.png"  BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Label Grid.Row="0" Grid.Column="1" Text="Configurações" FontSize="Large" TextColor="Green" BackgroundColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="End"/>
+        <Image Grid.Row="0" Grid.Column="1" AutomationId="configuracoes" Source="configuracoes.png"  BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="OnTappedConfiguracoes" NumberOfTapsRequired="1" />
             </Image.GestureRecognizers>
         </Image>
 
-        <Image Grid.Row="2" Grid.Column="0" AutomationId="crescimento" Source="crescimento.png" BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+        <Label Grid.Row="1" Grid.Column="0" Text="Crescimento" FontSize="Large" TextColor="Green" BackgroundColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="End"/>
+        <Image Grid.Row="1" Grid.Column="0" AutomationId="crescimento" Source="crescimento.png" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="OnTappedCrescimento" NumberOfTapsRequired="1" />
             </Image.GestureRecognizers>
         </Image>
 
-        <Image Grid.Row="2" Grid.Column="1" AutomationId="reproducao" Source="reproducao.png" BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Label Grid.Row="1" Grid.Column="1" Text="Reprodução" FontSize="Large" TextColor="Green" BackgroundColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="End"/>
+        <Image Grid.Row="1" Grid.Column="1" AutomationId="reproducao" Source="reproducao.png" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="OnTappedReproducao" NumberOfTapsRequired="1" />
             </Image.GestureRecognizers>
         </Image>
 
-        <Image Grid.Row="3" Grid.Column="0" AutomationId="cadastro" Source="cadastro.png" BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Label Grid.Row="2" Grid.Column="0" Text="Cadastro" FontSize="Large" TextColor="Green" BackgroundColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="End"/>
+        <Image Grid.Row="2" Grid.Column="0" AutomationId="cadastro" Source="cadastro.png" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="OnTappedCadastro" NumberOfTapsRequired="1" />
             </Image.GestureRecognizers>
         </Image>
 
-        <Image Grid.Row="3" Grid.Column="1" AutomationId="tarefas" Source="tarefas.png" BackgroundColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Label Grid.Row="2" Grid.Column="1" Text="Tarefas" FontSize="Large" TextColor="Green" BackgroundColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="End"/>
+        <Image Grid.Row="2" Grid.Column="1" AutomationId="tarefas" Source="tarefas.png" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="OnTappedTarefas" NumberOfTapsRequired="1" />
             </Image.GestureRecognizers>
         </Image>
-
+        
+        
     </Grid>
 
 

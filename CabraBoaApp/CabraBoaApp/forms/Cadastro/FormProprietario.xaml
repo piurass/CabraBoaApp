@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CabraBoaApp.forms.Cadastro.FormProprietario"
+             Title="Proprietario">
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical" Padding="0" VerticalOptions="FillAndExpand">
+            <StackLayout Padding="20" Spacing="20">
+                <Entry x:Name="Nome" Placeholder="Nome" />
+                <Entry x:Name="Endereço" Placeholder="Endereço" />
+                <Entry x:Name="Cidade" Placeholder="Cidade" />
+                <Entry x:Name="UF" Placeholder="UF" />
+                <Entry x:Name="CEP" Placeholder="CEP" />
+                <Entry x:Name="Localização" Placeholder="Localização GPS" />
+                <Button x:Name="Salvar" Text="Salvar Dados" Clicked="Salvar_Clicked"/>
+                <Button Text="Voltar" Clicked="Button_Clicked" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

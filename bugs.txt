@@ -1,0 +1,33 @@
+2>Não é possível resolver o conflito entre "mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" e "mscorlib, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e". Escolhendo "mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" arbitrariamente.
+2>Houve uma incompatibilidade entre a arquitetura de processador do projeto que está sendo compilado "MSIL" e a arquitetura de processador da referência "C:\Users\rogerio\source\repos\CabraBoaApp\CabraBoaApp\CabraBoaApp.Android\bin\x64\Debug\CabraBoaApp.Android.dll", "AMD64". Essa incompatibilidade poderá causar falhas de tempo de execução. Considere a alteração da arquitetura de processador de destino de seu projeto por meio do Configuration Manager de forma a alinhar as arquiteturas de processador entre seu projeto e as referências ou obtenha uma dependência sobre referências com uma arquitetura de processador que corresponda à arquitetura de processador de destino de seu projeto.
+2>Houve uma incompatibilidade entre a arquitetura de processador do projeto que está sendo compilado "MSIL" e a arquitetura de processador da referência "C:\Users\rogerio\source\repos\CabraBoaApp\CabraBoaApp\CabraBoaApp\bin\x64\Debug
+Gravidade	Código	Descrição	Projeto	Arquivo	Linha	Estado de Supressão
+Erro		ADB0020: The package does not support the CPU architecture of this device.
+   em Mono.AndroidTools.Internal.AdbOutputParsing.CheckInstallSuccess(String output, String packageName)
+   em Mono.AndroidTools.AndroidDevice.<>c__DisplayClass95_0.<InstallPackage>b__0(Task`1 t)
+   em System.Threading.Tasks.ContinuationTaskFromResultTask`1.InnerInvoke()
+   em System.Threading.Tasks.Task.Execute()		 	0	
+
+2>  Não é possível resolver o conflito entre "mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" e "mscorlib, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e". Escolhendo "mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" arbitrariamente.
+2>C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\Xamarin\Android\Xamarin.Android.Common.targets(2667,3): warning MSB3270: Houve uma incompatibilidade entre a arquitetura de processador do projeto que está sendo compilado "MSIL" e a arquitetura de processador da referência "C:\Users\rogerio\source\repos\CabraBoaApp\CabraBoaApp\CabraBoaApp.Android\bin\x86\Release\CabraBoaApp.Android.dll", "x86". Essa incompatibilidade poderá causar falhas de tempo de execução. Considere a alteração da arquitetura de processador de destino de seu projeto por meio do Configuration Manager de forma a alinhar as arquiteturas de processador entre seu projeto e as referências ou obtenha uma dependência sobre referências com uma arquitetura de processador que corresponda à arquitetura de processador de destino de seu projeto.
+2>C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\Xamarin\Android\Xamarin.Android.Common.targets(2667,3): warning MSB3270: Houve uma incompatibilidade entre a arquitetura de processador do projeto que está sendo compilado "MSIL" e a arquitetura de processador da referência "C:\Users\rogerio\source\repos\CabraBoaApp\CabraBoaApp\CabraBoaApp\bin\x86\Release\netstandard2.0\CabraBoaApp.dll", "x86". Essa incompatibilidade poderá causar falhas de tempo de execução. Considere a alteração da arquitetura de processador de destino de seu projeto por meio do Configuration Manager de forma a alinhar as arquiteturas de processador entre seu projeto e as referências ou obtenha uma dependência sobre referências com uma arquitetura de processador que corresponda à arquitetura de processador de destino de seu projeto.
+
+Gravidade	Código	Descrição	Projeto	Arquivo	Linha	Estado de Supressão
+Erro		ADB0020: The package does not support the CPU architecture of this device.
+   em Mono.AndroidTools.Internal.AdbOutputParsing.CheckInstallSuccess(String output, String packageName)
+   em Mono.AndroidTools.AndroidDevice.<>c__DisplayClass95_0.<InstallPackage>b__0(Task`1 t)
+   em System.Threading.Tasks.ContinuationTaskFromResultTask`1.InnerInvoke()
+   em System.Threading.Tasks.Task.Execute()		 	0	
+
+Gravidade	Código	Descrição	Projeto	Arquivo	Linha	Estado de Supressão
+Erro		Falha inesperada da tarefa "ResolveLibraryProjectImports".
+System.IO.FileNotFoundException: Could not load assembly 'CabraBoaApp, Version=0.0.0.0, Culture=neutral, PublicKeyToken='. Perhaps it doesn't exist in the Mono for Android profile?
+Nome do arquivo: 'CabraBoaApp.dll'
+   em Java.Interop.Tools.Cecil.DirectoryAssemblyResolver.Resolve(AssemblyNameReference reference, ReaderParameters parameters)
+   em Java.Interop.Tools.Cecil.DirectoryAssemblyResolver.Resolve(String fullName)
+   em Xamarin.Android.Tasks.ResolveLibraryProjectImports.Extract(DirectoryAssemblyResolver res, ICollection`1 jars, ICollection`1 resolvedResourceDirectories, ICollection`1 resolvedAssetDirectories, ICollection`1 resolvedEnvironments)
+   em Xamarin.Android.Tasks.ResolveLibraryProjectImports.Execute()
+   em Microsoft.Build.BackEnd.TaskExecutionHost.Microsoft.Build.BackEnd.ITaskExecutionHost.Execute()
+   em Microsoft.Build.BackEnd.TaskBuilder.<ExecuteInstantiatedTask>d__26.MoveNext()	CabraBoaApp.Android			
+
+

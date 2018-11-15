@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CabraBoaApp.pages.PageCrescimento">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="PageCrescimento"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Button Text="Voltar" Clicked="Button_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+    <Grid RowSpacing="6" ColumnSpacing="6" BackgroundColor="Green">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Label Grid.Row="0" Grid.Column="0" Text="Sem Peso e Sem Idade"      FontSize="Large" TextColor="Black" BackgroundColor="Yellow" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+        <Label Grid.Row="1" Grid.Column="0" Text="No Peso e na Idade"        FontSize="Large" TextColor="White" BackgroundColor="Green" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+        <Label Grid.Row="2" Grid.Column="0" Text="Recria"   FontSize="Large" TextColor="White" BackgroundColor="#00BFFF" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+        <Label Grid.Row="3" Grid.Column="0" Text="Não Sei!"         FontSize="Large" TextColor="White" BackgroundColor="Blue" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+        <Button Grid.Row="4" Grid.Column="0" Text="Voltar" Clicked="Button_Clicked" />
+    </Grid>
+</ContentPage>

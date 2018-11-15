@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using CabraBoaApp.forms.Cadastro;
 
-namespace CabraBoaApp
+namespace CabraBoaApp.pages
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class PageCadastro : ContentPage
@@ -28,6 +29,20 @@ namespace CabraBoaApp
         private async void Button_Clicked(object sender, EventArgs e)
         {
             await Navigation.PopAsync();
+        }
+
+        async void OnTapped(object sender, ItemTappedEventArgs e)
+        {
+            var menu = e.Item as MenuCadastro;
+            switch (menu.Nome)
+            {
+                case "Proprietário":
+                    await Navigation.PushAsync(new FormProprietario());
+                    break;
+                default:
+                    DisplayAlert("Itens", "Item Tocado não tratado!", "NOK");
+                    break;
+            }
         }
     }
 

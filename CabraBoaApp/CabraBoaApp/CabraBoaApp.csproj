@@ -25,22 +25,25 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="PageAlertas.xaml">
+    <EmbeddedResource Update="forms\Cadastro\FormProprietario.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="PageCadastro.xaml">
+    <EmbeddedResource Update="pages\PageAlertas.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="PageConfiguracoes.xaml">
+    <EmbeddedResource Update="pages\PageCadastro.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="PageCrescimento.xaml">
+    <EmbeddedResource Update="pages\PageConfiguracoes.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="PageReproducao.xaml">
+    <EmbeddedResource Update="pages\PageCrescimento.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="PageTarefas.xaml">
+    <EmbeddedResource Update="pages\PageReproducao.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="pages\PageTarefas.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

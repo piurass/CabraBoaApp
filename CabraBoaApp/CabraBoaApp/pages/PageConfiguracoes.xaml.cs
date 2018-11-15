@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace CabraBoaApp
+namespace CabraBoaApp.pages
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class PageConfiguracoes : ContentPage

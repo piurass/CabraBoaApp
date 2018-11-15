@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using CabraBoaApp.pages;
 
 namespace CabraBoaApp
 {
@@ -35,8 +36,7 @@ namespace CabraBoaApp
         }
 
         async void OnTappedAlertas(object sender, EventArgs args)
-        {
-            //Navigation.PushModalAsync(new PageAlertas());
+        {            
             await Navigation.PushAsync(new PageAlertas());
         }
 

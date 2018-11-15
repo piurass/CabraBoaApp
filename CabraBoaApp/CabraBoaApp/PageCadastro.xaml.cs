@@ -15,11 +15,24 @@ namespace CabraBoaApp
 		public PageCadastro ()
 		{
 			InitializeComponent ();
-		}
+            ListView.ItemsSource = new List<MenuCadastro>
+            {
+                new MenuCadastro { Nome = "Proprietário" },
+                new MenuCadastro { Nome = "Animal" },
+                new MenuCadastro { Nome = "Lote" },
+                new MenuCadastro { Nome = "Crescimento" },
+                new MenuCadastro { Nome = "Reprodução" }                
+            };
+        }
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
             await Navigation.PopAsync();
         }
+    }
+
+    public class MenuCadastro
+    {
+        public string Nome { get; set; }
     }
 }

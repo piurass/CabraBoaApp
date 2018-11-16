@@ -39,8 +39,20 @@ namespace CabraBoaApp.pages
                 case "Proprietário":
                     await Navigation.PushAsync(new FormProprietario());
                     break;
+                case "Animal":
+                    await Navigation.PushAsync(new FormAnimal());
+                    break;
+                case "Lote":
+                    await Navigation.PushAsync(new FormLote());
+                    break;
+                case "Crescimento":
+                    await Navigation.PushAsync(new FormCrescimento());
+                    break;
+                case "Reprodução":
+                    await Navigation.PushAsync(new FormReproducao());
+                    break;
                 default:
-                    DisplayAlert("Itens", "Item Tocado não tratado!", "NOK");
+                    DisplayAlert("Itens", "Item não tratado!", "NOK");
                     break;
             }
         }

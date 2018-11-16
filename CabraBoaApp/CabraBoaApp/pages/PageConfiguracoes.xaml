@@ -5,7 +5,7 @@
              Title="Configuracões">
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="ListView">
+            <ListView x:Name="ListView" ItemTapped="OnTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell Text="{Binding Nome}" TextColor="Black"/>

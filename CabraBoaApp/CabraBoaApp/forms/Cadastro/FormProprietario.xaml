@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CabraBoaApp.forms.Cadastro.FormProprietario"
-             Title="Proprietario">
+             Title="Cadastro de Proprietario">
     <ContentPage.Content>
         <ScrollView Orientation="Vertical" Padding="0" VerticalOptions="FillAndExpand">
             <StackLayout Padding="20" Spacing="20">

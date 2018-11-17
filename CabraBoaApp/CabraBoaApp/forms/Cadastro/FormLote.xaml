@@ -1,12 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CabraBoaApp.forms.Cadastro.FormLote">
+             x:Class="CabraBoaApp.forms.Cadastro.FormLote"
+             Title="Cadastro de Lote">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Cadastro.FormLote"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView Orientation="Vertical" Padding="0" VerticalOptions="FillAndExpand">
+            <StackLayout Padding="20" Spacing="20">
+                <Entry x:Name="Nome" Placeholder="Nome" />
+                <Entry x:Name="Inseminacao" Placeholder="Inseminação" />
+                <Entry x:Name="Dieta" Placeholder="Dieta" />
+                <Entry x:Name="Infraestrutura" Placeholder="Infraestrutura" />
+                <Button x:Name="Salvar" Text="Salvar Dados" Clicked="Salvar_Clicked"/>
+                <Button Text="Voltar" Clicked="Button_Clicked" />
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

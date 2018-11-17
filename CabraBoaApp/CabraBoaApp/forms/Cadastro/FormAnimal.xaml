@@ -1,12 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CabraBoaApp.forms.Cadastro.FormAnimal">
+             x:Class="CabraBoaApp.forms.Cadastro.FormAnimal"
+             Title="Cadastro de Animal">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Cadastro.FormAnimal"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView Orientation="Vertical" Padding="0" VerticalOptions="FillAndExpand">
+            <StackLayout Padding="20" Spacing="20">
+                <Entry x:Name="Nome" Placeholder="Nome" />
+                <Entry x:Name="Data_nascimento" Placeholder="Data de nascimento" />
+                <Entry x:Name="Peso" Placeholder="Peso" />
+                <Entry x:Name="Sexo" Placeholder="Sexo" />
+                <Entry x:Name="Pai" Placeholder="Pai" />
+                <Entry x:Name="Mae" Placeholder="Mae" />
+                <Entry x:Name="Data_morte" Placeholder="Data da morte" />
+                <Entry x:Name="Lote" Placeholder="Lote" />
+                <Entry x:Name="Chifre" Placeholder="Chifre" />
+                <Entry x:Name="Score" Placeholder="Score" />
+                <Entry x:Name="Cl" Placeholder="Cl" />
+                <Entry x:Name="Clo" Placeholder="Clo" />
+                <Button x:Name="Salvar" Text="Salvar Dados" Clicked="Salvar_Clicked"/>
+                <Button Text="Voltar" Clicked="Button_Clicked" />
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

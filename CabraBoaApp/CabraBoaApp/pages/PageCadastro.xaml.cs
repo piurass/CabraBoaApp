@@ -52,7 +52,7 @@ namespace CabraBoaApp.pages
                     await Navigation.PushAsync(new FormReproducao());
                     break;
                 default:
-                    DisplayAlert("Itens", "Item não tratado!", "NOK");
+                    await DisplayAlert("Itens", "Item não tratado!", "NOK");
                     break;
             }
         }

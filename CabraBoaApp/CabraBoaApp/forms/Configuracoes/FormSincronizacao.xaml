@@ -1,16 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CabraBoaApp.forms.Configuracoes.FormAlertas"
-             Title="Configurações de Alertas">
+             x:Class="CabraBoaApp.forms.Configuracoes.FormSincronizacao"
+             Title="Configurações de Sincronização">
     <ContentPage.Content>
         <ScrollView Orientation="Vertical" Padding="0" VerticalOptions="FillAndExpand">
             <StackLayout Padding="20" Spacing="20">
-                <Entry x:Name="Habilitar" Placeholder="Habilitar" />
-                <Entry x:Name="Notificacoes" Placeholder="Notificacoes" />
-                <Entry x:Name="Visual" Placeholder="Visual" />
-                <Entry x:Name="Sonoro" Placeholder="Sonoro" />
-                <Entry x:Name="Email" Placeholder="Email" />
+                <Entry x:Name="url" Placeholder="url" Text="https://sislivre.com.br"/>
+                <Entry x:Name="endpoint" Placeholder="Endpoint" Text="cabraboa"/>
+                <Entry x:Name="acesso" Placeholder="Acesso a internet" />
                 <Button x:Name="Salvar" Text="Salvar Dados" Clicked="Salvar_Clicked"/>
                 <Button Text="Voltar" Clicked="Button_Clicked" />
             </StackLayout>

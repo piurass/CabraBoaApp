@@ -1,12 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CabraBoaApp.forms.Configuracoes.FormUsuario">
+             x:Class="CabraBoaApp.forms.Configuracoes.FormUsuario"
+             Title="Configurações de Usuário">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Configuracoes.FormUsuario"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView Orientation="Vertical" Padding="0" VerticalOptions="FillAndExpand">
+            <StackLayout Padding="20" Spacing="20">
+                <Entry x:Name="Nome" Placeholder="Nome" />
+                <Entry x:Name="Data_nascimento" Placeholder="Data_nascimento" />
+                <Entry x:Name="Sexo" Placeholder="Sexo" />
+                <Entry x:Name="Foto" Placeholder="Foto" />
+                <Entry x:Name="Cargo" Placeholder="Cargo" />
+                <Entry x:Name="Email" Placeholder="Email" />
+                <Entry x:Name="Celular" Placeholder="Celular" />
+                <Entry x:Name="Senha" Placeholder="Senha" />
+                <Entry x:Name="Senha2" Placeholder="Confirmar Senha" />
+                <Button x:Name="Salvar" Text="Salvar Dados" Clicked="Salvar_Clicked"/>
+                <Button Text="Voltar" Clicked="Button_Clicked" />
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

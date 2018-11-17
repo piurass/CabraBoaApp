@@ -19,7 +19,7 @@ namespace CabraBoaApp.pages
             ListView.ItemsSource = new List<MenuConfiguracoes>
             {
                 new MenuConfiguracoes { Nome = "Usuário" },
-                new MenuConfiguracoes { Nome = "Acesso Internet" },
+                new MenuConfiguracoes { Nome = "Sincronização de Dados" },
                 new MenuConfiguracoes { Nome = "Alertas" }
 
             };
@@ -38,14 +38,14 @@ namespace CabraBoaApp.pages
                 case "Usuário":
                     await Navigation.PushAsync(new FormUsuario());
                     break;
-                case "Acesso Internet":
-                    await Navigation.PushAsync(new FormInternet());
+                case "Sincronização de Dados":
+                    await Navigation.PushAsync(new FormSincronizacao());
                     break;
                 case "Alertas":
                     await Navigation.PushAsync(new FormAlertas());
                     break;                
                 default:
-                    DisplayAlert("Itens", "Item não tratado!", "NOK");
+                    await DisplayAlert("Itens", "Item não tratado!", "NOK");
                     break;
             }
         }

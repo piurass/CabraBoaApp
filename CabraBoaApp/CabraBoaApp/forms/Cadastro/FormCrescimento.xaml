@@ -1,12 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CabraBoaApp.forms.Cadastro.FormCrescimento">
+             x:Class="CabraBoaApp.forms.Cadastro.FormCrescimento"
+             Title="Cadastro de Regras Crescimento">
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Cadastro.FormCrescimento"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+            <Button Text="Voltar" Clicked="Button_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

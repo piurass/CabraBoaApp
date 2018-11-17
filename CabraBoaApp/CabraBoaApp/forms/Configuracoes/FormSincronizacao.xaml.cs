@@ -11,22 +11,20 @@ using CabraBoaApp.dados;
 namespace CabraBoaApp.forms.Configuracoes
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class FormAlertas : ContentPage
+	public partial class FormSincronizacao : ContentPage
 	{
-		public FormAlertas ()
+		public FormSincronizacao ()
 		{
 			InitializeComponent ();
 		}
 
         private void Salvar_Clicked(object sender, EventArgs e)
         {
-            var alertas = new Alertas
+            var Sincronizacao = new Sincronizacao
             {
-                Habilitar       =  Habilitar.Text,
-                Notificacoes    =  Notificacoes.Text,
-                Visual          =  Visual.Text,
-                Sonoro          =  Sonoro.Text,
-                Email           =  Email.Text               
+                url = url.Text,
+                endpoint = endpoint.Text,
+                acesso = acesso.Text
             };
 
             DisplayAlert("Salvar", "Salvo com sucesso!", "OK");

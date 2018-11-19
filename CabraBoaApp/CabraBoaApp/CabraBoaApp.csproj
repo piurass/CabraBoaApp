@@ -39,6 +39,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="sqlite-net" Version="1.0.8" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.5.231" />
     <PackageReference Include="Xamarin.Forms" Version="3.3.0.912540" />
   </ItemGroup>
 
@@ -91,6 +93,33 @@
     <None Update="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
+    <None Update="forms\Cadastro\FormAnimal.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="forms\Cadastro\FormCrescimento.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="forms\Cadastro\FormLote.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="forms\Cadastro\FormProprietario.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="forms\Cadastro\FormReproducao.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="forms\Configuracoes\FormAlertas.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="forms\Configuracoes\FormSincronizacao.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="forms\Configuracoes\FormUsuario.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="forms\Configuracoes\Page1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
     <None Update="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
@@ -107,6 +136,24 @@
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Update="PageReproducao.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="pages\PageAlertas.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="pages\PageCadastro.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="pages\PageConfiguracoes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="pages\PageCrescimento.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="pages\PageReproducao.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="pages\PageTarefas.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Update="PageTarefas.xaml">

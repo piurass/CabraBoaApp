@@ -29,7 +29,22 @@ namespace CabraBoaApp.forms.Configuracoes
                 Email           =  Email.Text               
             };
 
-            DisplayAlert("Salvar", "Salvo com sucesso!", "OK");
+            DbAlertas db = new DbAlertas();
+            bool ret = db.Criar();
+            if (ret==true)
+            {
+                ret = db.Gravar(alertas);
+            }            
+            
+            if(ret==true)
+            {
+                DisplayAlert("Salvar", "Salvo com sucesso!", "OK");
+            }
+            else
+            {
+                DisplayAlert("Salvar", "Erro na gravação dos dados!", "NOK");
+            }
+            
         }
         private async void Button_Clicked(object sender, EventArgs e)
         {

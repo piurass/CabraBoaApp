@@ -16,22 +16,38 @@ namespace CabraBoaApp.dados
     {
         private string DatabasePath { get; set; }
         private SQLiteConnection Db { get; set; }
-        private string Erro { get; set; }
+        public string Erro { get; set; }
 
         public DbAlertas()
         {
             // Get an absolute path to the database file = .Personal .MyDocuments
             DatabasePath = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "CabraBoa.db");
-            
+            //DatabasePath = "C:\\cabraboa\\CabraBoa.db";
+            Erro = "";            
+        }
+
+        public string GetPath()
+        {
+            return DatabasePath;
+        }
+
+        public bool CheckDb()
+        {
+            return System.IO.File.Exists(DatabasePath);
+        }
+
+        public bool Conectar()
+        {
             try
             {
-                Db = new SQLiteConnection(DatabasePath);               
+                Db = new SQLiteConnection(DatabasePath);
+                return true;
             }
             catch (SQLiteException ex)
             {
-                Erro = ex.Message;                
+                Erro = ex.Message;
+                return false;
             }
-
         }
 
         public bool Criar()

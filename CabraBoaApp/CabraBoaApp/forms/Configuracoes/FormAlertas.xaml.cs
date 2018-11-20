@@ -10,39 +10,61 @@ using CabraBoaApp.dados;
 
 namespace CabraBoaApp.forms.Configuracoes
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class FormAlertas : ContentPage
-	{
-		public FormAlertas ()
-		{
-			InitializeComponent ();
-		}
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class FormAlertas : ContentPage
+    {
+        public FormAlertas()
+        {
+            InitializeComponent();
+        }
 
-        private void Salvar_Clicked(object sender, EventArgs e)
+        private async void Salvar_Clicked(object sender, EventArgs e)
         {
             var alertas = new Alertas
             {
-                Habilitar       =  Habilitar.Text,
-                Notificacoes    =  Notificacoes.Text,
-                Visual          =  Visual.Text,
-                Sonoro          =  Sonoro.Text,
-                Email           =  Email.Text               
+                Habilitar = Habilitar.Text,
+                Notificacoes = Notificacoes.Text,
+                Visual = Visual.Text,
+                Sonoro = Sonoro.Text,
+                Email = Email.Text
             };
 
+            bool ret = false;
             DbAlertas db = new DbAlertas();
-            bool ret = db.Criar();
+
+            if (!db.CheckDb())
+            {                
+                await DisplayAlert("Database", "não existe!", "OK0");
+            }
+
+            await DisplayAlert("Database", db.GetPath(), "OK0");
+
+            ret = db.Conectar();
+            await DisplayAlert("Conectar", db.Erro, "OK1");
+                  
+            
+            if (ret == true)
+            {
+                if(!db.CheckDb())
+                {
+                    ret = db.Criar();
+                    await DisplayAlert("Criar", db.Erro, "OK2");
+                }
+            }                        
+
             if (ret==true)
             {
                 ret = db.Gravar(alertas);
-            }            
-            
-            if(ret==true)
+                await DisplayAlert("Gravar", db.Erro, "OK3");
+            }
+          
+            if (ret==true)
             {
-                DisplayAlert("Salvar", "Salvo com sucesso!", "OK");
+                await DisplayAlert("Salvar", "Salvo com sucesso!", "OK");
             }
             else
             {
-                DisplayAlert("Salvar", "Erro na gravação dos dados!", "NOK");
+                await DisplayAlert("Salvar", "Erro na gravação dos dados!", "NOK");
             }
             
         }

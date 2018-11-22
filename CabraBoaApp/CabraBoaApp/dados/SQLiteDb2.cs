@@ -3,13 +3,13 @@ using Xamarin.Forms.Internals;
 
 namespace CabraBoaApp.dados
 {
-    class SQLiteDb
+    class SQLiteDb2
     {
         private string DatabasePath { get; set; }
         private SQLiteConnection Db { get; set; }
         public string Erro { get; set; }
 
-        public SQLiteDb()
+        public SQLiteDb2()
         {
             // Get an absolute path to the database file = .Personal .MyDocuments
             //DatabasePath = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "CabraBoa.db");            
@@ -57,11 +57,11 @@ namespace CabraBoaApp.dados
             }
         }
 
-        public bool Gravar(Alertas alertas)
+        public bool Gravar<T>(T obj)
         {
             try
             {
-                Db.Insert(alertas);
+                Db.Insert(obj);
                 return true;
             }
             catch (SQLiteException ex)
@@ -71,25 +71,25 @@ namespace CabraBoaApp.dados
             }
         }
 
-        public Alertas Ler()
+        public T Ler<T>() where T : new()
         {
             try
             {
-                return Db.Table<Alertas>().First();            
+                return Db.Table<T>().First();            
             }
             catch (SQLiteException ex)
             {
                 Erro = ex.Message;
-                return null;
+                return default(T);
             }
         }
 
-        public bool Apagar(Alertas alertas)
+        public bool Apagar<T>(T obj)
         {
             try
             {
                 //TODO: acertar isso aqui!!!
-                Db.Delete(alertas);                
+                Db.Delete(obj);                
                 return true;
             }
             catch (SQLiteException ex)
@@ -99,12 +99,12 @@ namespace CabraBoaApp.dados
             }
         }
 
-        public bool Atualizar(Alertas alertas)
+        public bool Atualizar<T>(T obj)
         {
             try
             {
                 //TODO: acertar isso aqui!!!
-                Db.Update(alertas);
+                Db.Update(obj);
                 return true;
             }
             catch (SQLiteException ex)

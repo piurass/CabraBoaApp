@@ -64,26 +64,26 @@ namespace CabraBoaApp.forms.Configuracoes
             ret = db.Conectar();
             await DisplayAlert("Conectar", db.Erro, "OK1");
 
+            /*
             if (ret == true)
             {
                 ret = db.Atualizar(alertas);
                 await DisplayAlert("Atualizar", db.Erro, "OK2");
             }
+            */
 
-            /*
             if (ret == true)
             {
                 ret = db.Criar();
                 await DisplayAlert("Criar", db.Erro, "OK2");
             }
-                     
+            
             if (ret == true)
             {
                 ret = db.Gravar(alertas);
                 await DisplayAlert("Gravar", db.Erro, "OK3");
             }
-            */
-
+            
             if (ret == true)
             {
                 await DisplayAlert("Salvar", "Salvo com sucesso!", "OK");

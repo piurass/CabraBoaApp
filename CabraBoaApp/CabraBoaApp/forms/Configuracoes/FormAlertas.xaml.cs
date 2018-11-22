@@ -13,14 +13,26 @@ namespace CabraBoaApp.forms.Configuracoes
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class FormAlertas : ContentPage
     {
+        private Alertas alertas;
+
         public FormAlertas()
         {
             InitializeComponent();
+
+            alertas =LeDb();     
+            if(alertas!=null)
+            {
+                Habilitar.Text = alertas.Habilitar;
+                Notificacoes.Text = alertas.Notificacoes;
+                Visual.Text = alertas.Visual;
+                Sonoro.Text = alertas.Sonoro;
+                Email.Text = alertas.Email;
+            }            
         }
 
         private async void Salvar_Clicked(object sender, EventArgs e)
         {
-            var alertas = new Alertas
+            alertas = new Alertas
             {
                 Habilitar = Habilitar.Text,
                 Notificacoes = Notificacoes.Text,
@@ -29,11 +41,21 @@ namespace CabraBoaApp.forms.Configuracoes
                 Email = Email.Text
             };
 
+            GravaDb(alertas);
+        }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
+
+        private async void GravaDb(Alertas alertas)
+        {
             bool ret = false;
-            DbAlertas db = new DbAlertas();
+            SQLiteDb db = new SQLiteDb();
 
             if (!db.CheckDb())
-            {                
+            {
                 await DisplayAlert("Database", "não existe!", "OK0");
             }
 
@@ -41,24 +63,28 @@ namespace CabraBoaApp.forms.Configuracoes
 
             ret = db.Conectar();
             await DisplayAlert("Conectar", db.Erro, "OK1");
-                  
-            
+
             if (ret == true)
             {
-                if(!db.CheckDb())
-                {
-                    ret = db.Criar();
-                    await DisplayAlert("Criar", db.Erro, "OK2");
-                }
-            }                        
+                ret = db.Atualizar(alertas);
+                await DisplayAlert("Atualizar", db.Erro, "OK2");
+            }
 
-            if (ret==true)
+            /*
+            if (ret == true)
+            {
+                ret = db.Criar();
+                await DisplayAlert("Criar", db.Erro, "OK2");
+            }
+                     
+            if (ret == true)
             {
                 ret = db.Gravar(alertas);
                 await DisplayAlert("Gravar", db.Erro, "OK3");
             }
-          
-            if (ret==true)
+            */
+
+            if (ret == true)
             {
                 await DisplayAlert("Salvar", "Salvo com sucesso!", "OK");
             }
@@ -66,11 +92,19 @@ namespace CabraBoaApp.forms.Configuracoes
             {
                 await DisplayAlert("Salvar", "Erro na gravação dos dados!", "NOK");
             }
-            
         }
-        private async void Button_Clicked(object sender, EventArgs e)
+
+        private Alertas LeDb()
         {
-            await Navigation.PopAsync();
+            bool ret = false;
+            SQLiteDb db = new SQLiteDb();
+            ret = db.Conectar();
+
+            if (ret == true)
+            {
+                return db.Ler();                
+            }
+            else { return null; }                
         }
     }
 }

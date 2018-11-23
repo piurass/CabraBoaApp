@@ -42,12 +42,12 @@ namespace CabraBoaApp.dados
             }
         }
 
-        public bool Criar()
+        public bool Criar<T>() where T : new()
         {
             try
             {
-                Db.DropTable<Alertas>();
-                Db.CreateTable<Alertas>(CreateFlags.ImplicitPK);
+                Db.DropTable<T>();
+                Db.CreateTable<T>(CreateFlags.ImplicitPK);
                 return true;
             }
             catch (SQLiteException ex)
@@ -57,11 +57,11 @@ namespace CabraBoaApp.dados
             }
         }
 
-        public bool Gravar(Alertas alertas)
+        public bool Gravar<T>(T obj)
         {
             try
             {
-                Db.Insert(alertas);
+                Db.Insert(obj);
                 return true;
             }
             catch (SQLiteException ex)
@@ -71,25 +71,25 @@ namespace CabraBoaApp.dados
             }
         }
 
-        public Alertas Ler()
+        public T Ler<T>() where T : new()
         {
             try
             {
-                return Db.Table<Alertas>().First();            
+                return Db.Table<T>().First();            
             }
             catch (SQLiteException ex)
             {
                 Erro = ex.Message;
-                return null;
+                return default(T);
             }
         }
 
-        public bool Apagar(Alertas alertas)
+        public bool Apagar<T>(T obj)
         {
             try
             {
                 //TODO: acertar isso aqui!!!
-                Db.Delete(alertas);                
+                Db.Delete(obj);                
                 return true;
             }
             catch (SQLiteException ex)
@@ -99,12 +99,12 @@ namespace CabraBoaApp.dados
             }
         }
 
-        public bool Atualizar(Alertas alertas)
+        public bool Atualizar<T>(T obj)
         {
             try
             {
                 //TODO: acertar isso aqui!!!
-                Db.Update(alertas);
+                Db.Update(obj);
                 return true;
             }
             catch (SQLiteException ex)
@@ -127,6 +127,34 @@ namespace CabraBoaApp.dados
         public override string ToString()
         {
             return base.ToString();
+        }
+
+        public bool GravaDados<T>(T obj) where T : new()
+        {            
+            bool ret = Conectar();            
+
+            if (ret == true)
+            {
+                ret = Criar<T>();
+            }
+
+            if (ret == true)
+            {
+                ret = Gravar(obj);                
+            }
+
+            return ret;
+        }
+
+        public T LeDados<T>() where T : new()
+        {
+            bool ret = Conectar();
+
+            if (ret == true)
+            {
+                return Ler<T>();
+            }
+            else { return default(T); }
         }
     }
 }

@@ -13,12 +13,34 @@ namespace CabraBoaApp.forms.Cadastro
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class FormAnimal : ContentPage
 	{
-		public FormAnimal ()
-		{
-			InitializeComponent ();
-		}
+        private Animal animal;
+        private SQLiteDb db;
 
-        private void Salvar_Clicked(object sender, EventArgs e)
+        public FormAnimal()
+        {
+            InitializeComponent();
+
+            db = new SQLiteDb();
+            animal = db.LeDados<Animal>();
+
+            if (animal != null)
+            {
+                Nome.Text = animal.Nome;
+                Data_nascimento.Text = animal.Data_nascimento;
+                Peso.Text = animal.Peso;
+                Sexo.Text = animal.Sexo;
+                Pai.Text = animal.Pai;
+                Mae.Text = animal.Mae;
+                Data_morte.Text = animal.Data_morte;
+                Lote.Text = animal.Lote;
+                Chifre.Text = animal.Chifre;
+                Score.Text = animal.Score;
+                Cl.Text = animal.Cl;
+                Clo.Text = animal.Clo;
+            }
+        }
+
+        private async void Salvar_Clicked(object sender, EventArgs e)
         {
             var animal = new Animal
             {
@@ -36,7 +58,16 @@ namespace CabraBoaApp.forms.Cadastro
                 Clo = Clo.Text
             };
 
-            DisplayAlert("Salvar", "Salvo com sucesso!", "OK");
+            bool ret = db.GravaDados(animal);
+
+            if (ret == true)
+            {
+                await DisplayAlert("Salvar", "Salvo com sucesso!", "OK");
+            }
+            else
+            {
+                await DisplayAlert("Salvar", "Erro na gravação dos dados!", "NOK");
+            }
         }
         private async void Button_Clicked(object sender, EventArgs e)
         {

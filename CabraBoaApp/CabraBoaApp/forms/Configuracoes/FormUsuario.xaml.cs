@@ -13,14 +13,32 @@ namespace CabraBoaApp.forms.Configuracoes
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class FormUsuario : ContentPage
 	{
-		public FormUsuario ()
-		{
-			InitializeComponent ();
-		}
+        private Usuario usuario;
+        private SQLiteDb db;
+
+        public FormUsuario()
+        {
+            InitializeComponent();
+
+            db = new SQLiteDb();
+            usuario = db.LeDados<Usuario>();
+
+            if (usuario != null)
+            {
+                Nome.Text = usuario.Nome;
+                Data_nascimento.Text = usuario.Data_nascimento;
+                Sexo.Text = usuario.Sexo;
+                Foto.Text = usuario.Foto;
+                Cargo.Text = usuario.Cargo;
+                Senha.Text = usuario.Senha;
+                Email.Text = usuario.Email;
+                Celular.Text = usuario.Celular;
+            }
+        }
 
         private async void Salvar_Clicked(object sender, EventArgs e)
         {
-            var usuario = new Usuario
+            usuario = new Usuario
             {
 
                 Nome = Nome.Text,
@@ -41,12 +59,22 @@ namespace CabraBoaApp.forms.Configuracoes
             }
             else if(senha2 == usuario.Senha)
             {
-                await DisplayAlert("Salvar", "Salvo com sucesso!", "OK");
+                bool ret = db.GravaDados(usuario);
+
+                if (ret == true)
+                {
+                    await DisplayAlert("Salvar", "Salvo com sucesso!", "OK");
+                }
+                else
+                {
+                    await DisplayAlert("Salvar", "Erro na gravação dos dados!", "NOK");
+                }
             }            
             else      
             {
                 await DisplayAlert("Salvar", "Senhas não batem! Favor corrigir", "Cancelar");
-            }            
+            }   
+            
         }
         private async void Button_Clicked(object sender, EventArgs e)
         {

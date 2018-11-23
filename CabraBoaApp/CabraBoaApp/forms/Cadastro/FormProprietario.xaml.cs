@@ -13,12 +13,28 @@ namespace CabraBoaApp.forms.Cadastro
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class FormProprietario : ContentPage
     {
+        private Proprietario proprietario;
+        private SQLiteDb db;
+
         public FormProprietario()
         {
             InitializeComponent();
+
+            db = new SQLiteDb();
+            proprietario = db.LeDados<Proprietario>();
+
+            if (proprietario != null)
+            {
+                Nome.Text = proprietario.Nome;
+                Endereço.Text = proprietario.Endereço;
+                Cidade.Text = proprietario.Cidade;
+                UF.Text = proprietario.UF;
+                CEP.Text = proprietario.Cep;
+                Localização.Text = proprietario.Localizacao;
+            }
         }
         
-        private void Salvar_Clicked(object sender, EventArgs e)
+        private async void Salvar_Clicked(object sender, EventArgs e)
         {
             var proprietario = new Proprietario
             {
@@ -30,7 +46,16 @@ namespace CabraBoaApp.forms.Cadastro
                 Localizacao = Localização.Text
             };
 
-            DisplayAlert("Salvar", "Salvo com sucesso!", "OK");
+            bool ret = db.GravaDados(proprietario);
+
+            if (ret == true)
+            {
+                await DisplayAlert("Salvar", "Salvo com sucesso!", "OK");
+            }
+            else
+            {
+                await DisplayAlert("Salvar", "Erro na gravação dos dados!", "NOK");
+            }
         }
         private async void Button_Clicked(object sender, EventArgs e)
         {

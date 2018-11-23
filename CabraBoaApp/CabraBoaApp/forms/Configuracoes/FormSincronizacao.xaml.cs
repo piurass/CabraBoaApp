@@ -13,22 +13,46 @@ namespace CabraBoaApp.forms.Configuracoes
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class FormSincronizacao : ContentPage
 	{
-		public FormSincronizacao ()
-		{
-			InitializeComponent ();
-		}
+        private Sincronizacao sincronizacao;
+        private SQLiteDb db;
 
-        private void Salvar_Clicked(object sender, EventArgs e)
+        public FormSincronizacao()
         {
-            var Sincronizacao = new Sincronizacao
+            InitializeComponent();
+
+            db = new SQLiteDb();
+            sincronizacao = db.LeDados<Sincronizacao>();
+
+            if (sincronizacao != null)
+            {
+                url.Text = sincronizacao.url;
+                endpoint.Text = sincronizacao.endpoint;
+                acesso.Text = sincronizacao.acesso;
+            }
+        }
+
+        private async void Salvar_Clicked(object sender, EventArgs e)
+        {
+            sincronizacao = new Sincronizacao
             {
                 url = url.Text,
                 endpoint = endpoint.Text,
                 acesso = acesso.Text
             };
 
-            DisplayAlert("Salvar", "Salvo com sucesso!", "OK");
+            bool ret = db.GravaDados(sincronizacao);
+
+            if (ret == true)
+            {
+                await DisplayAlert("Salvar", "Salvo com sucesso!", "OK");
+            }
+            else
+            {
+                await DisplayAlert("Salvar", "Erro na gravação dos dados!", "NOK");
+            }  
+            
         }
+
         private async void Button_Clicked(object sender, EventArgs e)
         {
             await Navigation.PopAsync();

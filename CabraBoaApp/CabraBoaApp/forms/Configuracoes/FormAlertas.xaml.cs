@@ -14,12 +14,15 @@ namespace CabraBoaApp.forms.Configuracoes
     public partial class FormAlertas : ContentPage
     {
         private Alertas alertas;
+        private SQLiteDb db; 
 
         public FormAlertas()
         {
             InitializeComponent();
 
-            alertas =LeDb();     
+            db = new SQLiteDb();
+            alertas =db.LeDados<Alertas>();     
+
             if(alertas!=null)
             {
                 Habilitar.Text = alertas.Habilitar;
@@ -41,49 +44,8 @@ namespace CabraBoaApp.forms.Configuracoes
                 Email = Email.Text
             };
 
-            GravaDb(alertas);
-        }
+            bool ret = db.GravaDados(alertas);
 
-        private async void Button_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PopAsync();
-        }
-
-        private async void GravaDb(Alertas alertas)
-        {
-            bool ret = false;
-            SQLiteDb db = new SQLiteDb();
-
-            if (!db.CheckDb())
-            {
-                await DisplayAlert("Database", "não existe!", "OK0");
-            }
-
-            await DisplayAlert("Database", db.GetPath(), "OK0");
-
-            ret = db.Conectar();
-            await DisplayAlert("Conectar", db.Erro, "OK1");
-
-            /*
-            if (ret == true)
-            {
-                ret = db.Atualizar(alertas);
-                await DisplayAlert("Atualizar", db.Erro, "OK2");
-            }
-            */
-
-            if (ret == true)
-            {
-                ret = db.Criar();
-                await DisplayAlert("Criar", db.Erro, "OK2");
-            }
-            
-            if (ret == true)
-            {
-                ret = db.Gravar(alertas);
-                await DisplayAlert("Gravar", db.Erro, "OK3");
-            }
-            
             if (ret == true)
             {
                 await DisplayAlert("Salvar", "Salvo com sucesso!", "OK");
@@ -94,17 +56,9 @@ namespace CabraBoaApp.forms.Configuracoes
             }
         }
 
-        private Alertas LeDb()
+        private async void Button_Clicked(object sender, EventArgs e)
         {
-            bool ret = false;
-            SQLiteDb db = new SQLiteDb();
-            ret = db.Conectar();
-
-            if (ret == true)
-            {
-                return db.Ler();                
-            }
-            else { return null; }                
-        }
+            await Navigation.PopAsync();
+        }                
     }
 }

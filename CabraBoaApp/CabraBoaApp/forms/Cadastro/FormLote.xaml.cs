@@ -13,12 +13,26 @@ namespace CabraBoaApp.forms.Cadastro
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class FormLote : ContentPage
 	{
-		public FormLote ()
+        private Lote lote;
+        private SQLiteDb db;
+
+        public FormLote ()
 		{
 			InitializeComponent ();
-		}
 
-        private void Salvar_Clicked(object sender, EventArgs e)
+            db = new SQLiteDb();
+            lote = db.LeDados<Lote>();
+
+            if (lote != null)
+            {
+                Nome.Text = lote.Nome;
+                Inseminacao.Text = lote.Inseminacao;
+                Dieta.Text = lote.Dieta;
+                Infraestrutura.Text = lote.Infraestrutura;
+            }
+        }
+
+        private async void Salvar_Clicked(object sender, EventArgs e)
         {
             var lote = new Lote
             {
@@ -28,8 +42,18 @@ namespace CabraBoaApp.forms.Cadastro
                 Infraestrutura= Infraestrutura.Text
             };
 
-            DisplayAlert("Salvar", "Salvo com sucesso!", "OK");
+            bool ret = db.GravaDados(lote);
+
+            if (ret == true)
+            {
+                await DisplayAlert("Salvar", "Salvo com sucesso!", "OK");
+            }
+            else
+            {
+                await DisplayAlert("Salvar", "Erro na gravação dos dados!", "NOK");
+            }
         }
+
         private async void Button_Clicked(object sender, EventArgs e)
         {
             await Navigation.PopAsync();

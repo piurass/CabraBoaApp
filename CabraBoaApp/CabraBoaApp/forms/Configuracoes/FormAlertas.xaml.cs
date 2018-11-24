@@ -25,11 +25,11 @@ namespace CabraBoaApp.forms.Configuracoes
 
             if(alertas!=null)
             {
-                Habilitar.Text = alertas.Habilitar;
-                Notificacoes.Text = alertas.Notificacoes;
-                Visual.Text = alertas.Visual;
-                Sonoro.Text = alertas.Sonoro;
-                Email.Text = alertas.Email;
+                Habilitar.IsToggled = alertas.Habilitar;
+                Notificacoes.IsToggled = alertas.Notificacoes;
+                Visual.IsToggled = alertas.Visual;
+                Sonoro.IsToggled = alertas.Sonoro;
+                Email.IsToggled = alertas.Email;
             }            
         }
 
@@ -37,11 +37,11 @@ namespace CabraBoaApp.forms.Configuracoes
         {
             alertas = new Alertas
             {
-                Habilitar = Habilitar.Text,
-                Notificacoes = Notificacoes.Text,
-                Visual = Visual.Text,
-                Sonoro = Sonoro.Text,
-                Email = Email.Text
+                Habilitar = Habilitar.IsToggled,
+                Notificacoes = Notificacoes.IsToggled,
+                Visual = Visual.IsToggled,
+                Sonoro = Sonoro.IsToggled,
+                Email = Email.IsToggled
             };
 
             bool ret = db.GravaDados(alertas);

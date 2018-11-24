@@ -6,11 +6,26 @@
     <ContentPage.Content>
         <ScrollView Orientation="Vertical" Padding="0" VerticalOptions="FillAndExpand">
             <StackLayout Padding="20" Spacing="20">
-                <Entry x:Name="Habilitar" Placeholder="Habilitar" />
-                <Entry x:Name="Notificacoes" Placeholder="Notificacoes" />
-                <Entry x:Name="Visual" Placeholder="Visual" />
-                <Entry x:Name="Sonoro" Placeholder="Sonoro" />
-                <Entry x:Name="Email" Placeholder="Email" />
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Habilitar" VerticalTextAlignment="Center"/>
+                    <Switch x:Name="Habilitar" VerticalOptions="Start"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Notificacoes" VerticalTextAlignment="Center"/>
+                    <Switch x:Name="Notificacoes" VerticalOptions="Start"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Visual" VerticalTextAlignment="Center"/>
+                    <Switch x:Name="Visual" VerticalOptions="Start"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Sonoro" VerticalTextAlignment="Center"/>
+                    <Switch x:Name="Sonoro" VerticalOptions="Start"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Email" VerticalTextAlignment="Center"/>
+                    <Switch x:Name="Email" VerticalOptions="Start"/>
+                </StackLayout>
                 <Button x:Name="Salvar" Text="Salvar Dados" Clicked="Salvar_Clicked"/>
                 <Button Text="Voltar" Clicked="Button_Clicked" />
             </StackLayout>

@@ -2,10 +2,10 @@
 {
     class Alertas
     {
-        public string Habilitar { get; set; }
-        public string Notificacoes { get; set; }
-        public string Visual { get; set; }
-        public string Sonoro { get; set; }
-        public string Email { get; set; }       
+        public bool Habilitar { get; set; }
+        public bool Notificacoes { get; set; }
+        public bool Visual { get; set; }
+        public bool Sonoro { get; set; }
+        public bool Email { get; set; }       
     }   
 }
